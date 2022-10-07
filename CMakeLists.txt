@@ -2,6 +2,14 @@ cmake_minimum_required(VERSION 2.8.7)
 
 project(bet2)
 
+set(CMAKE_CXX_STANDARD 11)
+
+# Ali Aghaeifar: need this compiler flag for static lib target in Linux
+if (UNIX)
+	add_compile_options(-fPIC)
+endif()
+
+
 # set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_MODULE_PATH ${bnviewer_SOURCE_DIR}/CMake)
 
@@ -51,4 +59,15 @@ target_link_libraries(bet2
 	newmat fslio newimage niftiio znzlib meshclass utils miscmaths vtkzlib
 	)
 
+# Ali Aghaeifar: create a static lib and link it to mex target
+ADD_LIBRARY(libbet2 STATIC ${Srcs})
+target_link_libraries(libbet2
+	newmat fslio newimage niftiio znzlib meshclass utils miscmaths vtkzlib
+	)
+set_target_properties(libbet2 PROPERTIES OUTPUT_NAME bet2)
 
+find_package(Matlab)
+
+if(Matlab_FOUND)
+	matlab_add_mex(NAME bet2_mex LINK_TO libbet2 newmat fslio newimage niftiio znzlib meshclass utils miscmaths vtkzlib SRC bet2_mex.cpp)
+endif()	
