@@ -1,16 +1,24 @@
+
 # bet2
-standalone Brain Extraction Tool (bet2), released by http://fsl.fmrib.ox.ac.uk/
+standalone Brain Extraction Tool (bet2) with MATLAB mex wrapper, released by http://fsl.fmrib.ox.ac.uk/
 
 The following features are added:
 
  * the program is reconfigured using CMake
- * ``vtkzlib`` is added to support generating `gzip`-ed nifti image files
+ * CMake configures MATLAB mex target as well.
+ * Support Windows and Linux
 
 to compile source code:
 
-.. code-block:: bash
+     mkdir build
+     cd build
+     cmake ..
+     make
 
- mkdir build
- cd build
- cmake ..
- make -j6
+ 
+ to use:
+ 
+
+    bet2_mex(input)
+input should be a **3D single real** array.
+Precompiled mex files for Windows and Linux can be downloaded in the repository releases.
