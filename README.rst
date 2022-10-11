@@ -16,7 +16,7 @@ To build:
   git clone https://github.com/aghaeifar/bet2.git
   mkdir build
   cd build
-  cmake -DCMAKE_BUILD_TYPE=Release ..
+  cmake ..
   make -j4
   
 To use:
