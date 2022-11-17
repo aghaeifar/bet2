@@ -82,7 +82,6 @@ namespace Utilities {
 
   unsigned int OptionParser::parse_option(const string& optstr, const string& valstr,
 					  char *argv[], int valpos, int argc)
-    throw(X_OptionError)
   {
     BaseOption * theOption = 0;
 
@@ -120,7 +119,6 @@ namespace Utilities {
 	  return 1;
       }
 
-    throw X_OptionError(optstr);
     return 0;
   }
 

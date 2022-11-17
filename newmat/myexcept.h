@@ -188,7 +188,7 @@ static JanitorInitializer JanInit;
 #ifdef UseExceptions
 
 #define Try try
-#define Throw(E) throw E
+#define Throw(E) // throw E
 #define ReThrow throw
 #define Catch catch
 #define CatchAll catch(...)

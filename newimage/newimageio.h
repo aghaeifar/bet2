@@ -80,11 +80,11 @@
 #include "complexvolume.h"
 #include "fslio/fslio.h"
 #include "miscmaths/miscmaths.h"
-
-#ifdef WIN32 || WIN64
+/*
+#if defined(WIN32) || defined(WIN64)
 typedef signed long long int int64_t;
 #endif
-
+*/
 using namespace NEWMAT;
 
 namespace NEWIMAGE {

@@ -2707,9 +2707,9 @@ typedef struct { unsigned char a,b ; } TWObytes ;
 
 void Swap_2bytes( int n , void *ar )    /* 2 bytes at a time */
 {
-  register int ii ;
-   register TWObytes *tb = (TWObytes *)ar ;
-   register unsigned char tt ;
+   int ii ;
+    TWObytes *tb = (TWObytes *)ar ;
+    unsigned char tt ;
 
    for( ii=0 ; ii < n ; ii++ ){
      tt = tb[ii].a ; tb[ii].a = tb[ii].b ; tb[ii].b = tt ;
@@ -2723,9 +2723,9 @@ typedef struct { unsigned char a,b,c,d ; } FOURbytes ;
 
 void Swap_4bytes( int n , void *ar )    /* 4 bytes at a time */
 {
-   register int ii ;
-   register FOURbytes *tb = (FOURbytes *)ar ;
-   register unsigned char tt ;
+    int ii ;
+    FOURbytes *tb = (FOURbytes *)ar ;
+    unsigned char tt ;
 
    for( ii=0 ; ii < n ; ii++ ){
      tt = tb[ii].a ; tb[ii].a = tb[ii].d ; tb[ii].d = tt ;
@@ -2740,9 +2740,9 @@ typedef struct { unsigned char a,b,c,d , D,C,B,A ; } EIGHTbytes ;
 
 void Swap_8bytes( int n , void *ar )    /* 8 bytes at a time */
 {
-   register int ii ;
-   register EIGHTbytes *tb = (EIGHTbytes *)ar ;
-   register unsigned char tt ;
+    int ii ;
+    EIGHTbytes *tb = (EIGHTbytes *)ar ;
+    unsigned char tt ;
 
    for( ii=0 ; ii < n ; ii++ ){
      tt = tb[ii].a ; tb[ii].a = tb[ii].A ; tb[ii].A = tt ;
@@ -2760,9 +2760,9 @@ typedef struct { unsigned char a,b,c,d,e,f,g,h ,
 
 void Swap_16bytes( int n , void *ar )    /* 16 bytes at a time */
 {
-   register int ii ;
-   register SIXTEENbytes *tb = (SIXTEENbytes *)ar ;
-   register unsigned char tt ;
+    int ii ;
+    SIXTEENbytes *tb = (SIXTEENbytes *)ar ;
+    unsigned char tt ;
 
    for( ii=0 ; ii < n ; ii++ ){
      tt = tb[ii].a ; tb[ii].a = tb[ii].A ; tb[ii].A = tt ;

@@ -606,7 +606,7 @@ int main(unsigned int argc, char **argv) {
     */
     unsigned int parse_option(const std::string& optstr, const std::string& valstr, 
 			      char *argv[], int valpos, int argc)
-      throw(X_OptionError);
+      ;
 
     /**
        @param str A string of the form --option[=value].

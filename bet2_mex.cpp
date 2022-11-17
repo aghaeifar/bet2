@@ -683,7 +683,6 @@ int RunBET(float *BrainData,int NX, int NY, int NZ, float *Mask){
 	Mesh m;
 	make_mesh_from_icosa(5, m); 
   
-  
 	bet_parameters bp = adjust_initial_mesh(testvol, m, radiusarg.value(), xarg, yarg, zarg);
   
 	Mesh moriginal=m;
@@ -707,7 +706,7 @@ int RunBET(float *BrainData,int NX, int NY, int NZ, float *Mask){
 		fflush(stdout);
 	  }
 	}
-  
+    
 	double tmp = m.self_intersection(moriginal);
 	if (verbose.value() && !generate_mesh.value())
 	cout<<"self-intersection total "<<tmp<<" (threshold=4000.0) "<<endl;
@@ -719,8 +718,9 @@ int RunBET(float *BrainData,int NX, int NY, int NZ, float *Mask){
 
 	if (verbose.value() && generate_mesh.value() && self_intersection)
 	cout<<"the mesh is self-intersecting "<<endl;
-
-
+    
+    
+    
   //self-intersection treatment
   while (self_intersection)
     {
@@ -749,7 +749,8 @@ int RunBET(float *BrainData,int NX, int NY, int NZ, float *Mask){
 	
       if (pass==10) // give up
 	self_intersection=0;
-    }
+  }
+  
   
 
   //display
@@ -778,6 +779,7 @@ int RunBET(float *BrainData,int NX, int NY, int NZ, float *Mask){
 	    output.value(i, j, k) = (1-brainmask.value(i, j, k)) * output.value(i, j, k);
       //if (save_volume(output,out.c_str())<0)  return -1;
     }  
+      //worked
   
   if (generate_mask.value().size()>0){
       //if (save_volume((short)1 - brainmask, generate_mask.value().c_str())<0)  return -1;
@@ -820,11 +822,10 @@ int RunBET(float *BrainData,int NX, int NY, int NZ, float *Mask){
       if (save_volume(bskull, skullstr.c_str())<0)  return -1;
     }
 
-
+return 1;
 }
 
 
-// Mex function is written by Dr. Christian Mirkes
 
 void mexFunction (int nlhs, mxArray * plhs[], int nrhs, const mxArray * prhs[])
 {

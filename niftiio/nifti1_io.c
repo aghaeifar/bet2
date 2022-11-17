@@ -2138,7 +2138,7 @@ void nifti_mat44_to_orientation( mat44 R , int *icod, int *jcod, int *kcod )
 *//*--------------------------------------------------------------------*/
 void nifti_swap_2bytes( size_t n , void *ar )    /* 2 bytes at a time */
 {
-   register size_t ii ;
+    size_t ii ;
    unsigned char * cp1 = (unsigned char *)ar, * cp2 ;
    unsigned char   tval;
 
@@ -2155,9 +2155,9 @@ void nifti_swap_2bytes( size_t n , void *ar )    /* 2 bytes at a time */
 *//*--------------------------------------------------------------------*/
 void nifti_swap_4bytes( size_t n , void *ar )    /* 4 bytes at a time */
 {
-   register size_t ii ;
+    size_t ii ;
    unsigned char * cp0 = (unsigned char *)ar, * cp1, * cp2 ;
-   register unsigned char tval ;
+    unsigned char tval ;
 
    for( ii=0 ; ii < n ; ii++ ){
        cp1 = cp0; cp2 = cp0+3;
@@ -2176,9 +2176,9 @@ void nifti_swap_4bytes( size_t n , void *ar )    /* 4 bytes at a time */
 *//*--------------------------------------------------------------------*/
 void nifti_swap_8bytes( size_t n , void *ar )    /* 8 bytes at a time */
 {
-   register size_t ii ;
+    size_t ii ;
    unsigned char * cp0 = (unsigned char *)ar, * cp1, * cp2 ;
-   register unsigned char tval ;
+    unsigned char tval ;
 
    for( ii=0 ; ii < n ; ii++ ){
        cp1 = cp0;  cp2 = cp0+7;
@@ -2197,9 +2197,9 @@ void nifti_swap_8bytes( size_t n , void *ar )    /* 8 bytes at a time */
 *//*--------------------------------------------------------------------*/
 void nifti_swap_16bytes( size_t n , void *ar )    /* 16 bytes at a time */
 {
-   register size_t ii ;
+    size_t ii ;
    unsigned char * cp0 = (unsigned char *)ar, * cp1, * cp2 ;
-   register unsigned char tval ;
+    unsigned char tval ;
 
    for( ii=0 ; ii < n ; ii++ ){
        cp1 = cp0;  cp2 = cp0+15;
@@ -2220,9 +2220,9 @@ void nifti_swap_16bytes( size_t n , void *ar )    /* 16 bytes at a time */
 *//*--------------------------------------------------------------------*/
 void nifti_swap_bytes( size_t n , int siz , void *ar )
 {
-   register size_t ii ;
+    size_t ii ;
    unsigned char * cp0 = (unsigned char *)ar, * cp1, * cp2 ;
-   register unsigned char tval ;
+    unsigned char tval ;
 
    for( ii=0 ; ii < n ; ii++ ){
        cp1 = cp0;  cp2 = cp0+(siz-1);
