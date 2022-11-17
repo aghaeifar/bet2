@@ -820,11 +820,11 @@ extern "C"
                              gradient_threshold.value ());
 
         // display progress, revised by liangfu
-        if ((i % int (nb_iter * .01f)) == 1)
+        if (((i+1) % int (nb_iter * .01f)) == 0)
           {
             fprintf (stdout,
                      "[%3.0f%%] BET: Performing %d of %d iterations.\t\t\r",
-                     i * 100.f / nb_iter, i, nb_iter);
+                     (i+1) * 100.f / nb_iter, i+1, nb_iter);
             fflush (stdout);
           }
       }

@@ -700,11 +700,13 @@ int RunBET(float *BrainData,int NX, int NY, int NZ, float *Mask){
 	  step_of_computation(testvol, m, bet_main_parameter, 0, 0, i, l, bp.t2, bp.tm, bp.t, E, F, bp.cog.Z, bp.radius, gradient_threshold.value());
 
 	  // display progress, revised by liangfu
-	  if ((i%int(nb_iter*.01f)) == 1){
-		fprintf(stdout, "[%3.0f%%] BET: Performing %d of %d iterations.\t\t\r",
-		  i*100.f / nb_iter, i, nb_iter);
-		fflush(stdout);
-	  }
+	  if (((i+1) % int (nb_iter * .01f)) == 0)
+          {
+            fprintf (stdout,
+                     "[%3.0f%%] BET: Performing %d of %d iterations.\t\t\r",
+                     (i+1) * 100.f / nb_iter, i+1, nb_iter);
+            fflush (stdout);
+          }
 	}
     
 	double tmp = m.self_intersection(moriginal);
