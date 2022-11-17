@@ -7,6 +7,7 @@ The following features are added:
 
  * The program is reconfigured using CMake
  * CMake configures MATLAB mex target as well.
+ * Building static and dynamic library (dll or so) of BET
  * Support Windows and Linux
 
 To build:
