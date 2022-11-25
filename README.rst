@@ -16,6 +16,7 @@ To build:
 .. code-block:: bash
 
 	  git clone https://github.com/aghaeifar/bet2.git
+	  cd bet2
 	  mkdir build
 	  cd build
 	  cmake ..
